@@ -47,7 +47,7 @@ def write_data(df):
     df[df.Survived != -1].to_csv(write_train_path)
     #test data
     columns = [column for column in df.columns if column != 'Survived']
-    df[df.Survived == -1][columns].to_csv(write_test_path)
+    df[df.Survived != -1][columns].to_csv(write_test_path)
     
 
 def get_title(name):
